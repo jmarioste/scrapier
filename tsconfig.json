@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "es2018" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */,
+    "module": "commonjs" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */,
+    "lib": ["ES2018", "ESNext.AsyncIterable"] /* Specify library files to be included in the compilation. */,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    /* Strict Type-Checking Options */
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "strictPropertyInitialization": false,
+    "allowSyntheticDefaultImports": true,
+
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "src/*": ["./src/*"]
+    },
+    "plugins": [
+      { "transform": "typescript-transform-paths" },
+      { "transform": "typescript-transform-paths", "afterDeclarations": true }
+    ]
+  },
+  "include": ["*.d.ts", "./env.d.ts", "./src/**/*.ts", "./src/**/*test.ts"],
+  "exclude": ["node_modules"]
+}
