@@ -2,6 +2,7 @@ export type ChapterInfo = {
   url: string;
   number?: number;
 };
+
 export type Chapter = {
   content?: string;
   title?: string;

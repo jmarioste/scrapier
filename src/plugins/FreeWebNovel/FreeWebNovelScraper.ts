@@ -22,11 +22,11 @@ export class FreeWebNovelScraper implements NovelScraper {
     try {
       const response = await axios.get(novelUrl);
       const $ = cheerio.load(response.data);
-      const chapter = $("m-newest1 > ul > li > a")
-        .map((a) => {
-          const url = $(a).attr("href") ?? "";
+      const chapter = $(".m-newest1 > ul > li > a:first")
+        .map((_, elem) => {
+          const url = $(elem).attr("href") ?? "";
           const number = url?.match(/(?!chapter-)\d+/)?.shift() ?? "";
-          console.log(url, number);
+
           return {
             url,
             number: parseInt(number),
