@@ -34,6 +34,6 @@
       { "transform": "typescript-transform-paths", "afterDeclarations": true }
     ]
   },
-  "include": ["*.d.ts", "./env.d.ts", "./src/**/*.ts", "./src/**/*test.ts"],
-  "exclude": ["node_modules"]
+  "include": ["*.d.ts", "./env.d.ts", "./src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "./src/**/*.test.ts"]
 }
