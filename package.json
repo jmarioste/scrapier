@@ -1,11 +1,13 @@
 {
   "name": "scrapier",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist/*.js",
-    "dist/**/*.js"
+    "dist/*.d.ts",
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
   ],
   "scripts": {
     "test": "jest",
