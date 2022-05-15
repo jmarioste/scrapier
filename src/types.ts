@@ -8,13 +8,16 @@ export type Chapter = {
   title?: string;
 } & ChapterInfo;
 
+export type Rating = {
+  rating: number;
+  votes: number;
+};
 export type Novel = {
-  id: string;
   title: string;
   alternativeTitles: string;
   slug: string;
   imageUrl: string;
-  rating: number;
+  rating: Rating;
   genres: string[];
   authors: string[];
   artists?: string[];
@@ -28,6 +31,7 @@ export interface NovelScraper {
   getLatestChapterInfo(): Promise<ChapterInfo | null>;
   getAllChaptersInfo(): Promise<ChapterInfo[]>;
   getChaptersInfoFromRange(start: number, end?: number): Promise<ChapterInfo[]>;
-  getAllNovels(): Promise<Novel[]>;
-  getNovelBySlug(slug: string): Promise<Novel | null>;
+  getAllSlugs(): Promise<string[]>;
+  getSlugsByPage(page: number): Promise<string[]>;
+  getNovelBySlug(slug: string): Promise<Partial<Novel> | null>;
 }
