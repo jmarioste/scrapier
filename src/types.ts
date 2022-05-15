@@ -34,4 +34,6 @@ export interface NovelScraper {
   getAllSlugs(): Promise<string[]>;
   getSlugsByPage(page: number): Promise<string[]>;
   getNovelBySlug(slug: string): Promise<Partial<Novel> | null>;
+  getChapterByUrl(url: string): Promise<Chapter | null>;
+  getChapterByNumber(number: number): Promise<Chapter | null>;
 }

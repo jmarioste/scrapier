@@ -1,7 +1,7 @@
 import { FreeWebNovelScraper } from "./FreeWebNovelScraper";
 
 describe("FreeWebNovelScraper", () => {
-  const scrap = new FreeWebNovelScraper("martial-peak");
+  const scrap = new FreeWebNovelScraper("reformation-of-the-deadbeat-noble");
   test("should not be null ", () => {
     expect(scrap).not.toBe(null);
   });

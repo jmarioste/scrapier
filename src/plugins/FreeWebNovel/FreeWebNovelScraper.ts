@@ -1,12 +1,20 @@
 import axios, { AxiosError } from "axios";
 import cheerio from "cheerio";
-import { ChapterInfo, Novel, NovelScraper, Rating } from "src/types";
+import { Chapter, ChapterInfo, Novel, NovelScraper, Rating } from "src/types";
 
 const BASE_URL = "https://freewebnovel.com/";
 
 export class FreeWebNovelScraper implements NovelScraper {
   $: cheerio.Root;
   constructor(private slug: string) {}
+  async getChapterByUrl(url: string): Promise<Chapter | null> {
+    console.log(url);
+    return null;
+  }
+  async getChapterByNumber(number: number): Promise<Chapter | null> {
+    console.log(number);
+    return null;
+  }
 
   handleError(e: unknown) {
     if (e instanceof AxiosError) {

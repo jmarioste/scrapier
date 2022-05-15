@@ -8,6 +8,7 @@
     /* Strict Type-Checking Options */
     "skipLibCheck": true,
     "sourceMap": true,
+    "declaration": true,
     "moduleResolution": "node",
     "strict": true,
     "removeComments": true,
