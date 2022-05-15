@@ -16,7 +16,7 @@ describe("FreeWebNovelScraper", () => {
   test("getLatestChapterInfo should  return values", async () => {
     const chapter = await scrap.getLatestChapterInfo();
     if (chapter) {
-      expect(chapter.number).toBeGreaterThanOrEqual(1200);
+      expect(chapter.number).toBeGreaterThanOrEqual(313);
       expect(chapter.url).toBeTruthy();
     }
   });
@@ -24,7 +24,7 @@ describe("FreeWebNovelScraper", () => {
   test("getAllChaptersInfo should return values", async () => {
     const chapters = await scrap.getAllChaptersInfo();
 
-    expect(chapters.length).toBeGreaterThanOrEqual(1200);
+    expect(chapters.length).toBeGreaterThanOrEqual(313);
   });
 
   test("Get getChaptersInfoFromRange to return correct values", async () => {
