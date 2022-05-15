@@ -69,4 +69,22 @@ describe("FreeWebNovelScraper", () => {
       expect(novel.imageUrl).toBe("https://freewebnovel.com/files/article/image/1/1961/1961s.jpg");
     }
   });
+
+  test("Get getChapterByNumber to return content", async () => {
+    const chapter = await scrap.getChapterByNumber(1);
+    if (chapter) {
+      expect(chapter.title).toBe("Prologue - Diary of a Villager");
+      expect(chapter.content).toContain("Someone new came to the village.");
+      expect(chapter.number).toBe(1);
+    }
+  });
+
+  test("Get getChapterByNumber to return content", async () => {
+    const chapter = await scrap.getChapterByNumber(2);
+    if (chapter) {
+      expect(chapter.title).toBe("Chapter 1: The Lazy Prince Picks Up a Sword (1)");
+      expect(chapter.content).toContain("However, there was something else");
+      expect(chapter.number).toBe(2);
+    }
+  });
 });

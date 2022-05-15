@@ -7,13 +7,17 @@ const BASE_URL = "https://freewebnovel.com/";
 export class FreeWebNovelScraper implements NovelScraper {
   $: cheerio.Root;
   constructor(private slug: string) {}
-  async getChapterByUrl(url: string): Promise<Chapter | null> {
-    console.log(url);
-    return null;
-  }
+
   async getChapterByNumber(number: number): Promise<Chapter | null> {
-    console.log(number);
-    return null;
+    const url = `${BASE_URL}${this.slug}/chapter-${number}.html`;
+
+    const $ = await this.load(url);
+
+    return {
+      number,
+      title: this.getMetaProperty("og:novel:chapter_name"),
+      content: this.getChapterContent(),
+    };
   }
 
   handleError(e: unknown) {
@@ -170,6 +174,19 @@ export class FreeWebNovelScraper implements NovelScraper {
       this.handleError(e);
       throw e;
     }
+  }
+
+  private getChapterContent(): string {
+    const $ = this.$;
+    const content = $("div.m-read div.txt > p")
+      .map((_, elem) => {
+        if ($(elem).children("strong").length) return "";
+
+        return $(elem).text();
+      })
+      .get()
+      .join("\n");
+    return content;
   }
 
   private getTitle(): string {

@@ -6,7 +6,8 @@ export type ChapterInfo = {
 export type Chapter = {
   content?: string;
   title?: string;
-} & ChapterInfo;
+  number: number;
+};
 
 export type Rating = {
   rating: number;
@@ -34,6 +35,5 @@ export interface NovelScraper {
   getAllSlugs(): Promise<string[]>;
   getSlugsByPage(page: number): Promise<string[]>;
   getNovelBySlug(slug: string): Promise<Partial<Novel> | null>;
-  getChapterByUrl(url: string): Promise<Chapter | null>;
   getChapterByNumber(number: number): Promise<Chapter | null>;
 }
