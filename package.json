@@ -1,7 +1,6 @@
 {
   "name": "scrapier",
   "version": "1.0.0",
-  "description": "",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -11,8 +10,8 @@
     "dev": "ts-node-dev --respawn -r tsconfig-paths/register src/index.ts"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Jasser Mark Arioste",
+  "license": "MIT",
   "devDependencies": {
     "@types/cheerio": "^0.22.31",
     "@types/jest": "^27.5.1",
@@ -28,5 +27,14 @@
   "dependencies": {
     "axios": "^0.27.2",
     "cheerio": "^1.0.0-rc.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmarioste/scrapier.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jmarioste/scrapier/issues"
+  },
+  "homepage": "https://github.com/jmarioste/scrapier#readme",
+  "description": ""
 }
